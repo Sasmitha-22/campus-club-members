@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Club Members</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7f6;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #176b5b;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #176b5b;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 25px;
+            background-color: #176b5b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0f5144;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .note {
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Campus Club Members</h1>
+
+        <p class="subtitle">Member Registration Form</p>
+
+        <!-- Success message -->
+        <div id="successMessage" class="success" style="display: none;">
+            Member details added successfully!
+        </div>
+
+        <form action="/submit" method="POST">
+
+            <label for="memberId">Member ID</label>
+            <input
+                type="text"
+                id="memberId"
+                name="memberId"
+                placeholder="Enter Member ID"
+                required
+            >
+
+            <label for="memberName">Member Name</label>
+            <input
+                type="text"
+                id="memberName"
+                name="memberName"
+                placeholder="Enter Member Name"
+                required
+            >
+
+            <label for="memberEmail">Email</label>
+            <input
+                type="email"
+                id="memberEmail"
+                name="memberEmail"
+                placeholder="Enter Email"
+                required
+            >
+
+            <label for="department">Department</label>
+            <input
+                type="text"
+                id="department"
+                name="department"
+                placeholder="Enter Department"
+                required
+            >
+
+            <label for="club">Club Name</label>
+
+            <select id="club" name="club" required>
+
+                <option value="">Select Club</option>
+                <option value="Coding Club">Coding Club</option>
+                <option value="AI Club">AI Club</option>
+                <option value="Robotics Club">Robotics Club</option>
+                <option value="Music Club">Music Club</option>
+                <option value="Photography Club">Photography Club</option>
+
+            </select>
+
+            <button type="submit">
+                Add Member
+            </button>
+
+        </form>
+
+        <p class="note">
+            Campus Club Member Registration System
+        </p>
+
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        if (params.get("success") === "true") {
+            document.getElementById("successMessage").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
