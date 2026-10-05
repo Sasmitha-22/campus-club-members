@@ -29,9 +29,7 @@ Install the required dependencies:
 ```bash
 npm install 
 
-```markdown
 Create a `.env` file in the project root and add your MongoDB connection string:
 
-```text
 MONGODB_URI=your_mongodb_connection_string
 
