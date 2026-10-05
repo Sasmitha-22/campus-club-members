@@ -24,12 +24,17 @@ A Node.js and Express.js web application for registering campus club members and
 
 ## How to Run
 
-Install the required dependencies:
-
-```bash
-npm install 
-
 Create a `.env` file in the project root and add your MongoDB connection string:
 
 MONGODB_URI=your_mongodb_connection_string
 
+Install the required dependencies:
+
+```bash
+npm install 
+```
+Then run this command  in the terminal:
+
+```bash
+   npm start
+```
